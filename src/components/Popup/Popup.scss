@@ -1,0 +1,90 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); // lighter transparency for overlay
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.popup-content {
+  background: rgba(0, 0, 0, 0.5); /* default for web */
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  position: relative;
+  animation: slideUp 0.4s ease-out;
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Smooth fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Smooth slide-up */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 🔹 Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .popup-content {
+    background: rgba(0, 0, 0, 0.7); /* less transparent for mobile */
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .popup-close {
+    font-size: 24px;
+    top: 6px;
+    right: 10px;
+  }
+
+  .popup-content h2 {
+    font-size: 22px; /* slightly smaller heading on mobile */
+  }
+
+  .popup-content p {
+    font-size: 16px; /* better readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    background: rgba(0, 0, 0, 0.75); /* even less transparent on very small screens */
+    padding: 18px;
+    max-width: 95%;
+  }
+
+  .popup-close {
+    font-size: 22px;
+  }
+
+  .popup-content h2 {
+    font-size: 20px;
+  }
+
+  .popup-content p {
+    font-size: 15px;
+  }
+}
