@@ -15,57 +15,20 @@ import TeamSlider from "../Slider/TeamSlider";
 import VideoModal from "../VideoModal";
 import TimelineSlider from "../Slider/TimelineSlider";
 import { pageTitle } from "../../helper";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "./Home.css";
-import Button from "../Button"; // Add this import with your other imports
+import Button from "../Button";
 import { useLocation } from "react-router-dom";
 import ChatBot from "../ChatBot/ChatBot";
 import { Helmet } from "react-helmet-async";
 import Popup from "../Popup/Popup";
 
-
-const heroImages = [
-  "/images/Home_1.webp",
-  "/images/Home_2.webp",
-  "/images/Home_3.webp",
-  "/images/Home_4.webp",
-  "/images/Home_5.webp",
-  "/images/Home_6.webp",
-  "/images/Home_7.webp",
-];
-// Hero Social Links
-const heroSocialLinks = [
-  {
-    name: "Behance",
-    links: "/",
-  },
-  {
-    name: "Twitter",
-    links: "/",
-  },
-];
-
-// FunFact Data
 const funfaceData = [
-  {
-    title: "Global Happy Clients",
-    factNumber: "20",
-  },
-  {
-    title: "Project Completed",
-    factNumber: "12",
-  },
-  {
-    title: "Team Members",
-    factNumber: "15",
-  },
-  {
-    title: "Spin-off products",
-    factNumber: "50",
-  },
+  { title: "Global Happy Clients", factNumber: "20" },
+  { title: "Project Completed", factNumber: "12" },
+  { title: "Team Members", factNumber: "15" },
+  { title: "Spin-off products", factNumber: "50" },
 ];
+
 const portfolioData = [
   {
     title: "Deep Space Exploration",
@@ -76,7 +39,7 @@ const portfolioData = [
   {
     title: "Liquid Space Fuels",
     subtitle: "See Details",
-    href: "/spaceportfolio#thermal",  // Changed from cryogenics to thermal
+    href: "/spaceportfolio#thermal",
     src: "/images/Home_8.webp",
   },
   {
@@ -105,8 +68,24 @@ const portfolioData = [
   },
 ];
 
-
-
+const capabilityIcons = [
+  {
+    icon: <img src="/images/icons/capability1.png" alt="Intelligent Orbital Infrastructure" />,
+    label: "Intelligent Orbital\nInfrastructure",
+  },
+  {
+    icon: <img src="/images/icons/capability2.png" alt="Autonomous Mission Systems" />,
+    label: "Autonomous\nMission Systems",
+  },
+  {
+    icon: <img src="/images/icons/capability3.png" alt="Lunar & Deep Space Logistics" />,
+    label: "Lunar & Deep Space\nLogistics",
+  },
+  {
+    icon: <img src="/images/icons/capability4.png" alt="Hypersonic & ISR Ecosystems" />,
+    label: "Hypersonic & ISR\nEcosystems",
+  },
+];
 export default function Home() {
   pageTitle("Home");
 
@@ -126,47 +105,61 @@ export default function Home() {
     }
   }, [location]);
 
-  const sliderSettings = {
-    dots: false, // Hides dots for a cleaner look
-    infinite: true, // Ensures looping
-    speed: 1000, // Smooth transition speed
-    slidesToShow: 1, // Shows one image at a time
-    slidesToScroll: 1, // Scrolls one image at a time
-    autoplay: true, // Enables automatic sliding
-    autoplaySpeed: 2500, // Adjusts speed for a natural feel
-    pauseOnHover: false, // Prevents pausing when hovered
-    swipeToSlide: true, // Allows smooth swiping
-    arrows: false, // Hides arrows for a cleaner look
-    cssEase: "ease-in-out", // Ensures smooth easing
-  };
-
   return (
     <>
-    <Helmet>
-    <title>Onnes - Next Generation Cryogenic Tank Technology</title>
-    <meta
-      name="description"
-      content="Onnes develops advanced cryogenic tanks for aerospace, shipping, and hydrogen storage. Explore our expertise in design, simulation, and manufacturing."
-    />
-    <meta name="keywords" content="Cryogenics, Hydrogen Storage, Aerospace, Onnes Technology, Tank Manufacturing" />
-    <link rel="canonical" href="https://onnes.in/" />
-  </Helmet>
-  
+      <Helmet>
+        <title>Onnes - Next Generation Cryogenic Tank Technology</title>
+        <meta
+          name="description"
+          content="Onnes develops advanced cryogenic tanks for aerospace, shipping, and hydrogen storage. Explore our expertise in design, simulation, and manufacturing."
+        />
+        <meta name="keywords" content="Cryogenics, Hydrogen Storage, Aerospace, Onnes Technology, Tank Manufacturing" />
+        <link rel="canonical" href="https://onnes.in/" />
+      </Helmet>
+
       {/* Start Hero Section */}
-      <div className="hero-slider">
-        <Slider {...sliderSettings}>
-          {heroImages.map((image, index) => (
-            <div key={index} className="hero-slide-wrapper">
-              <img
-                src={image}
-                alt={`Hero ${index + 1}`}
-                className="hero-image"
-              />
+      <div className="hero-banner">
+        <img
+          src="/images/Home_banner.png"
+          alt="Onnes Banner"
+          className="hero-image"
+        />
+        <div className="hero-overlay">
+          <div className="hero-content">
+            <h1 className="hero-heading">
+              Engineering Tomorrow<br />
+              <span className="hero-highlight">Beyond Boundaries.</span>
+            </h1>
+            <div className="hero-blue-line" />
+            <p className="hero-subtext">
+              Onnes Aerospace is engineering intelligent infrastructure
+              systems for persistent orbital operations, lunar logistics,
+              autonomous aerospace platforms, and next-generation
+              deep-space missions.
+            </p>
+            <button className="hero-btn">
+              EXPLORE OUR CAPABILITIES &nbsp;&gt;
+            </button>
+          </div>
+        </div>
+
+        {/* Bottom Capabilities Bar */}
+        <div className="hero-capabilities-bar">
+          {capabilityIcons.map((item, index) => (
+            <div className="hero-capability-item" key={index}>
+              <div className="hero-capability-icon">{item.icon}</div>
+              <span className="hero-capability-label">
+                {item.label.split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i === 0 && <br />}
+                  </span>
+                ))}
+              </span>
             </div>
           ))}
-        </Slider>
+        </div>
       </div>
-
       {/* End Hero Section */}
 
       {/* Start Team Section */}
@@ -180,7 +173,7 @@ export default function Home() {
         <Spacing lg="85" md="45" />
         <TeamSlider />
       </Div>
-      <Spacing lg="150" md="80" />
+      
       {/* End Team Section */}
 
       {/* Start MovingText Section */}
@@ -193,20 +186,8 @@ export default function Home() {
       <Div className="container" id="partners">
         <LogoList />
       </Div>
-      <Spacing lg="150" md="80" />
       {/* End LogoList Section */}
 
-      {/* Start CTA Section */}
-      <Div className="container">
-        <Cta
-          title="Let’s discuss to make <br /> ultra <i>cool</i> and <i>light</i> tanks integrated with bespoke cryogenic systems"
-          btnText="Contact Us"
-          btnLink="/contact#contact-form"
-          bgSrc="/images/cta_bg.jpeg"
-        />
-      </Div>
-
-      {/* End CTA Section */}
       {/* ChatBot Component */}
       <ChatBot />
       {/* Popup Component */}

@@ -1,78 +1,272 @@
-/* Hero.css */
-.hero-slider {
+/* Hero Banner */
+.hero-banner {
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-}
-
-.hero-slide-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 6%;
+}
+
+/* Left-side content */
+.hero-content {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.3px;
+  max-width: 650px;
+}
+
+.hero-highlight {
+  color: #2b7fff;
+}
+
+.hero-blue-line {
+  width: 55px;
+  height: 3px;
+  background-color: #2b7fff;
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.hero-subtext {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  line-height: 1.75;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #2b7fff;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #1a5fd1;
+}
+
+/* ---- Capabilities Bar ---- */
+.hero-capabilities-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: stretch;
+  background: rgba(5, 10, 25, 0.88);
+  border-top: 1px solid rgba(43, 127, 255, 0.25);
+  height: 100px;
+}
+
+.hero-capability-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-capability-item:last-child {
+  border-right: none;
+}
+
+.hero-capability-icon {
+  flex-shrink: 0;
+}
+
+.hero-capability-icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-capability-label {
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
 }
 
 /* Small devices - phones */
 @media (max-width: 767px) {
-  .hero-slider,
-  .hero-slide-wrapper,
+  .hero-banner {
+    height: 70vh;
+  }
+
   .hero-image {
     padding-top: 25px;
-    height: 35vh;
+    height: 70vh;
+  }
+
+  .hero-overlay {
+    padding-left: 5%;
+    bottom: 70px;
+    align-items: center;
+  }
+
+  .hero-heading {
+    font-size: 1.4rem;
+    white-space: normal;
+    max-width: 280px;
+  }
+
+  .hero-subtext {
+    display: none;
+  }
+
+  .hero-btn {
+    font-size: 0.6rem;
+    padding: 8px 14px;
+  }
+
+  .hero-blue-line {
+    width: 35px;
+    margin-bottom: 10px;
+  }
+
+  .hero-capabilities-bar {
+    height: 70px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .hero-capability-item {
+    min-width: 140px;
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .hero-capability-label {
+    font-size: 0.7rem;
+  }
+
+  .hero-capability-icon img {
+    width: 26px;
+    height: 26px;
   }
 }
 
 /* iPad Mini Portrait */
 @media (min-width: 768px) and (max-width: 819px) {
-  .hero-slider,
-  .hero-slide-wrapper,
+  .hero-banner,
   .hero-image {
     height: 50vh;
+  }
+
+  .hero-heading {
+    font-size: 1.8rem;
+    white-space: normal;
+  }
+
+  .hero-capability-icon img {
+    width: 34px;
+    height: 34px;
   }
 }
 
 /* iPad Air Portrait */
 @media (min-width: 820px) and (max-width: 833px) {
-  .hero-slider,
-  .hero-slide-wrapper,
+  .hero-banner,
   .hero-image {
     height: 55vh;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
+    white-space: normal;
+  }
+
+  .hero-capability-icon img {
+    width: 36px;
+    height: 36px;
   }
 }
 
 /* iPad Pro 11" Portrait */
 @media (min-width: 834px) and (max-width: 1023px) {
-  .hero-slider,
-  .hero-slide-wrapper,
+  .hero-banner,
   .hero-image {
     height: 60vh;
+  }
+
+  .hero-heading {
+    font-size: 2.2rem;
+    white-space: normal;
+  }
+
+  .hero-capability-icon img {
+    width: 38px;
+    height: 38px;
   }
 }
 
 /* iPad Pro 12.9" Portrait and Small Desktops */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .hero-slider,
-  .hero-slide-wrapper,
+  .hero-banner,
   .hero-image {
     height: 75vh;
+  }
+
+  .hero-heading {
+    font-size: 2.4rem;
+    white-space: normal;
+  }
+
+  .hero-capability-icon img {
+    width: 40px;
+    height: 40px;
   }
 }
 
 .cs-service-heading .cs-section_title {
-  /* Your custom styles */
   font-size: 2rem;
   line-height: 1.3;
 }
 
 .onnes-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
@@ -106,11 +300,11 @@
     position: absolute;
     inset: 0;
     display: flex;
-    align-items:center;
+    align-items: center;
     padding-right: 12px;
     padding-top: 12px;
     z-index: 2;
-    text-align: center; 
+    text-align: center;
   }
 
   .cs-card_title {
@@ -119,4 +313,3 @@
     font-weight: 700;
   }
 }
-
