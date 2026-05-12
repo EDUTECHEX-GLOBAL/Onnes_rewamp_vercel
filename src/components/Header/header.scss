@@ -772,7 +772,7 @@
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ANNOUNCEMENT BAR
+// ANNOUNCEMENT BAR - EXISTING DESKTOP STYLES (UNCHANGED)
 // ─────────────────────────────────────────────────────────────────────────────
 
 .cs-ann_bar {
@@ -828,7 +828,7 @@
   padding: 0 16px;
 }
 
-// GLOBE ICON (unchanged 26px)
+// GLOBE ICON
 .cs-ann_icon {
   flex-shrink: 0;
   display: block;
@@ -837,7 +837,7 @@
   object-fit: contain;
 }
 
-// ROCKET ICON (increased size only)
+// ROCKET ICON
 .cs-ann_rocket_icon {
   flex-shrink: 0;
   display: block;
@@ -894,7 +894,7 @@
   }
 }
 
-// TABLET (769px - 1199px)
+// TABLET (769px - 1199px) - EXISTING STYLES (UNCHANGED)
 @media screen and (min-width: 769px) and (max-width: 1199px) {
   .cs-ann_bar {
     height: 56px;
@@ -916,30 +916,100 @@
   }
 }
 
-// MOBILE (max 768px)
+// ============================================================
+// MOBILE FIX (max 768px) - MODIFIED ONLY THIS SECTION
+// Shows ALL columns, just stacked vertically
+// ============================================================
 @media screen and (max-width: 768px) {
   .cs-ann_bar {
-    height: 52px;
+    height: auto;
+    min-height: 52px;
+    flex-direction: column;
+    padding: 12px 16px;
+    gap: 10px;
   }
+
+  // Remove borders and fixed widths from all columns
+  .cs-ann_col1,
+  .cs-ann_col2,
   .cs-ann_col3,
   .cs-ann_col4 {
-    display: none;
+    flex: none;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    padding: 0;
+    justify-content: center;
+    gap: 10px;
   }
+
   .cs-ann_col1 {
-    flex: 0 0 50px;
-    padding-right: 14px;
+    justify-content: center;
+    padding-right: 0;
   }
+
   .cs-ann_rocket_icon {
     width: 28px;
     height: 28px;
   }
-  .cs-ann_col2 {
-    flex: 1;
-    padding: 0 12px;
-    border-right: none;
+
+  .cs-ann_icon {
+    width: 22px;
+    height: 22px;
   }
+
   .cs-ann_title {
-    font-size: 9px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .cs-ann_sub,
+  .cs-ann_launch {
+    font-size: 11px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .cs-ann_launch {
+    max-width: 280px;
+  }
+
+  .cs-ann_x {
+    font-size: 18px;
+    margin-left: 8px;
+  }
+}
+
+// SMALL MOBILE (max 480px)
+@media screen and (max-width: 480px) {
+  .cs-ann_bar {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .cs-ann_rocket_icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cs-ann_title {
+    font-size: 10px;
     letter-spacing: 0.06em;
+  }
+
+  .cs-ann_sub,
+  .cs-ann_launch {
+    font-size: 10px;
+  }
+
+  .cs-ann_icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cs-ann_launch {
+    max-width: 240px;
   }
 }
