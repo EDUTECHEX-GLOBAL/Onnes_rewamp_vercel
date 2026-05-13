@@ -18,6 +18,7 @@
 .cs-partner_logo_slider {
   display: flex;
   flex-wrap: nowrap;
+  align-items: center; // keeps all logos vertically centered
   animation: scroll-left 30s linear infinite;
   gap: 30px;
   padding: 50px 0;
@@ -55,6 +56,23 @@
 }
 
 // ----------------------------
+// PARAS LOGO (LARGER + CENTERED)
+// ----------------------------
+.cs-partner_logo.partner-paras {
+  width: 300px;
+  height: 135px; // same as base logo height
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cs-partner_logo.partner-paras img {
+  max-width: 100%;
+  max-height: 160px; // enlarged logo image
+  object-fit: contain;
+}
+
+// ----------------------------
 // MOBILE RESPONSIVENESS
 // ----------------------------
 @media screen and (max-width: 768px) {
@@ -75,6 +93,16 @@
     height: 110px;
     margin-top: 0;
   }
+
+  // Mobile PARAS logo
+  .cs-partner_logo.partner-paras {
+    width: 200px;
+    height: 100px; // same as normal mobile logo height
+  }
+
+  .cs-partner_logo.partner-paras img {
+    max-height: 120px;
+  }
 }
 
 // ----------------------------
@@ -84,6 +112,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-2530px);
   }
