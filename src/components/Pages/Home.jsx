@@ -108,7 +108,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Onnes - Next Generation Cryogenic Tank Technology</title>
+        <title>Next Generation Space Infrastructure</title>
         <meta
           name="description"
           content="Onnes develops advanced cryogenic tanks for aerospace, shipping, and hydrogen storage. Explore our expertise in design, simulation, and manufacturing."
@@ -161,20 +161,6 @@ export default function Home() {
         </div>
       </div>
       {/* End Hero Section */}
-
-      {/* Start Team Section */}
-      <Spacing lg="145" md="80" />
-      <Div className="container">
-        <SectionHeading
-          title="Awesome team <br/>members"
-          subtitle="Our Team"
-          variant="cs-style1"
-        />
-        <Spacing lg="85" md="45" />
-        <TeamSlider />
-      </Div>
-      
-      {/* End Team Section */}
 
       {/* Start MovingText Section */}
       <Spacing lg="125" md="70" />

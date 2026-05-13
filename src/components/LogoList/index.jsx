@@ -12,23 +12,9 @@ const topPartners = [
   { src: '/images/Partner_6.1.jpeg', alt: 'Partner 6' },
   { src: '/images/Partner_7.1.png', alt: 'Partner 7' },
   { src: '/images/Partner_nvidia.png', alt: 'Partner 7.1' },
-];
-
-// Bottom static partners
-const bottomPartners = [
-  { src: '/images/Client_1.png', alt: 'Partner 8' },
-  { src: '/images/Client_2.png', alt: 'Partner 9' },
-  { src: '/images/Client_3.png', alt: 'Partner 10' },
-  { src: '/images/Client_4.png', alt: 'Partner 11' },
-  { src: '/images/Investors_1.jpg', alt: 'Partner12' },
-];
-
-// Extra row of 4 partners
-const extraBottomPartners = [
-  { src: '/images/mufg.png', alt: 'Extra Partner 1' },
-  { src: '/images/deepakgroup.png', alt: 'Extra Partner 2' },
-  { src: '/images/cropped_cse_logo.svg', alt: 'Extra Partner 3' },
-  { src: '/images/newtrace_logo.svg', alt: 'Extra Partner 4' }, // We'll target this
+  { src: '/images/Client_3.png', alt: 'Partner 10' },       // moved from bottom
+  { src: '/images/IIMAVentures-04.png', alt: 'Partner12' },
+  { src: '/images/cropped_cse_logo.svg', alt: 'Extra Partner 3' }, // moved from extra-bottom
 ];
 
 export default function LogoList() {
@@ -56,39 +42,6 @@ export default function LogoList() {
             );
           })}
         </div>
-      </Div>
-
-      {/* Bottom Row */}
-      <Div className="cs-partner_logo_wrap bottom" aria-label="Bottom Partners logos">
-        {bottomPartners.map((logo, index) => {
-          const extraClass =
-            logo.alt === 'Partner 8' ? 'partner-8' :
-            logo.alt === 'Partner 11' ? 'partner-11' : '';
-
-          return (
-            <div className={`cs-partner_logo ${extraClass}`} key={`bottom-${index}`}>
-              <img src={logo.src} alt={logo.alt} />
-            </div>
-          );
-        })}
-      </Div>
-
-      {/* Extra Bottom Row */}
-      <Div className="cs-partner_logo_wrap extra-bottom" aria-label="Extra Bottom Partners logos">
-        {extraBottomPartners.map((logo, index) => {
-          // 🎯 Assign class to Newtrace
-          let extraClass = '';
-          if (logo.alt === 'Extra Partner 1') extraClass = 'extra-mufg';
-          else if (logo.alt === 'Extra Partner 2') extraClass = 'extra-deepak';
-          else if (logo.alt === 'Extra Partner 3') extraClass = 'extra-cse';
-          else if (logo.alt === 'Extra Partner 4') extraClass = 'extra-newtrace'; // <-- Add this
-
-          return (
-            <div className={`cs-partner_logo ${extraClass}`} key={`extra-bottom-${index}`}>
-              <img src={logo.src} alt={logo.alt} />
-            </div>
-          );
-        })}
       </Div>
     </Div>
   );

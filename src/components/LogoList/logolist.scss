@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px; // Vertical gap between rows
+  gap: 30px;
 }
 
 // ----------------------------
@@ -18,7 +18,7 @@
 .cs-partner_logo_slider {
   display: flex;
   flex-wrap: nowrap;
-  animation: scroll-left 15s linear infinite;
+  animation: scroll-left 30s linear infinite;
   gap: 30px;
   padding: 50px 0;
   will-change: transform;
@@ -41,57 +41,7 @@
 }
 
 // ----------------------------
-// BOTTOM STATIC ROW
-// ----------------------------
-.cs-partner_logo_wrap.bottom {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  width: 100%;
-  max-width: 1200px;
-  padding: 20px 0;
-  overflow-x: hidden;
-}
-
-// ----------------------------
-// EXTRA BOTTOM STATIC ROW
-// ----------------------------
-.cs-partner_logo_wrap.extra-bottom {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  width: 100%;
-  max-width: 1200px;
-  padding: 20px 0;
-  overflow-x: hidden;
-}
-
-// Individual logo sizing in extra-bottom row
-.cs-partner_logo.extra-mufg {
-  width: 280px;
-  height: 190px;
-}
-
-.cs-partner_logo.extra-deepak {
-  width: 250px;
-  height: 180px;
-}
-
-.cs-partner_logo.extra-cse {
-  width: 260px;
-  height: 180px;
-}
-
-.cs-partner_logo.extra-newtrace {
-  width: 270px;
-  height: 180px;
-  // removed manual margin — spacing now controlled via gap
-}
-
-// ----------------------------
-// SPECIAL CASES (TOP/BOTTOM)
+// SPECIAL CASES (TOP ROW)
 // ----------------------------
 .cs-partner_logo.partner-6 {
   width: 250px;
@@ -104,28 +54,6 @@
   height: 155px;
 }
 
-.cs-partner_logo.partner-8 {
-  width: 210px;
-  height: 140px;
-  margin-top: -8px;
-}
-
-.cs-partner_logo.partner-11 {
-  width: 210px;
-  height: 140px;
-}
-
-/* Shared styles for all rows */
-.cs-partner_logo_wrap {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-/* Manually push Newtrace slightly to the right */
-.extra-newtrace {
-  margin-left: 15px;
-}
 // ----------------------------
 // MOBILE RESPONSIVENESS
 // ----------------------------
@@ -136,29 +64,16 @@
     padding: 5px;
   }
 
-  .cs-partner_logo_slider,
-  .cs-partner_logo_wrap.bottom,
-  .cs-partner_logo_wrap.extra-bottom,
-  .cs-partner_logo_wrap {
+  .cs-partner_logo_slider {
     gap: 20px;
     padding: 15px 0;
   }
 
-  .cs-partner_logo.extra-mufg,
-  .cs-partner_logo.extra-deepak,
-  .cs-partner_logo.extra-cse,
-  .cs-partner_logo.extra-newtrace {
-    width: 180px;
-    height: 120px;
-  }
-
   .cs-partner_logo.partner-6,
-  .cs-partner_logo.partner-4,
-  .cs-partner_logo.partner-8,
-  .cs-partner_logo.partner-11 {
+  .cs-partner_logo.partner-4 {
     width: 160px;
     height: 110px;
-    margin-top: 0; // neutralize negative margin for better mobile stacking
+    margin-top: 0;
   }
 }
 
@@ -167,9 +82,9 @@
 // ----------------------------
 @keyframes scroll-left {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-2530px);
   }
 }

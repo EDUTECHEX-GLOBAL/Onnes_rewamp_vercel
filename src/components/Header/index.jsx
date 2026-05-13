@@ -17,7 +17,6 @@ export default function Header({ variant }) {
   const [isSticky, setIsSticky] = useState(false);
   const [sideHeaderToggle, setSideHeaderToggle] = useState(false);
   const [mobileToggle, setMobileToggle] = useState(false);
-  const [annVisible, setAnnVisible] = useState(true);
 
   const ANN_HEIGHT = 62;
   const NAV_HEIGHT = 90;
@@ -40,7 +39,7 @@ export default function Header({ variant }) {
     }
   }, [location]);
 
-  const totalFixedHeight = (annVisible ? ANN_HEIGHT : 0) + NAV_HEIGHT;
+  const totalFixedHeight = ANN_HEIGHT + NAV_HEIGHT;
   const closeMobileMenu = () => setMobileToggle(false);
 
   return (
@@ -48,39 +47,31 @@ export default function Header({ variant }) {
       <div className="cs-fixed_top_wrapper">
 
         {/* ── Announcement Bar ── */}
-        {annVisible && (
-  <div className="cs-ann_bar">
+        <div className="cs-ann_bar">
 
-    {/* COL 1: rocket icon */}
-    <div className="cs-ann_col1">
-      <img src="/images/icons/rocket.png" alt="rocket" className="cs-ann_rocket_icon" />
-    </div>
+          {/* COL 1: rocket icon — visible on desktop only */}
+          <div className="cs-ann_col1">
+            <img src="/images/icons/rocket.png" alt="rocket" className="cs-ann_rocket_icon" />
+          </div>
 
-    {/* COL 2: title only */}
-    <div className="cs-ann_col2">
-      <span className="cs-ann_title">WEBSITE UNDER TRANSFORMATION</span>
-    </div>
+          {/* COL 2: rocket (mobile only) + title inline */}
+          <div className="cs-ann_col2">
+            <img src="/images/icons/rocket.png" alt="rocket" className="cs-ann_rocket_icon cs-ann_rocket_mobile" />
+            <span className="cs-ann_title">WEBSITE UNDER TRANSFORMATION</span>
+          </div>
 
-    {/* COL 3: subtitle */}
-    <div className="cs-ann_col3">
-      <span className="cs-ann_sub">Building the infrastructure for humanity&apos;s deep space future.</span>
-    </div>
+          {/* COL 3: subtitle */}
+          <div className="cs-ann_col3">
+            <span className="cs-ann_sub">Building the infrastructure for humanity&apos;s deep space future.</span>
+          </div>
 
-    {/* COL 4: globe + launch text + close */}
-    <div className="cs-ann_col4">
-      <img src="/images/icons/globe.png" alt="globe" className="cs-ann_icon" />
-      <span className="cs-ann_launch">Our next-generation platform launches in 4–6 weeks.</span>
-      <button
-        className="cs-ann_x"
-        onClick={() => setAnnVisible(false)}
-        aria-label="Dismiss announcement"
-      >
-        ✕
-      </button>
-    </div>
+          {/* COL 4: globe + launch text */}
+          <div className="cs-ann_col4">
+            <img src="/images/icons/globe.png" alt="globe" className="cs-ann_icon" />
+            <span className="cs-ann_launch">Our new website launches in 4–6 weeks.</span>
+          </div>
 
-  </div>
-)}
+        </div>
 
         {/* ── Navbar ── */}
         <header
@@ -110,20 +101,26 @@ export default function Header({ variant }) {
                         <Link to="/" onClick={closeMobileMenu}>Capabilities</Link>
                       </li>
 
-                      <li className="menu-item-has-children">
-                        <NavLink to="/technology" onClick={closeMobileMenu}>Technologies</NavLink>
-                        <DropDown>
-                          <ul>
-                            <li><Link to="/technology#carbon-fiber" onClick={closeMobileMenu}>Carbon Fiber Tanks</Link></li>
-                            <li><Link to="/technology#cryogenics" onClick={closeMobileMenu}>Cryogenics Systems</Link></li>
-                            <li><Link to="/technology#thermal" onClick={closeMobileMenu}>Thermal Management</Link></li>
-                            <li><Link to="/technology#recycling" onClick={closeMobileMenu}>Sustainability And Recycling</Link></li>
-                          </ul>
-                        </DropDown>
+                      {/* Technologies — no dropdown, stays on home page */}
+                      <li>
+                        <a
+                          href="#"
+                          onClick={(e) => { e.preventDefault(); closeMobileMenu(); }}
+                          style={{ cursor: "pointer" }}
+                        >
+                          Technologies
+                        </a>
                       </li>
 
+                      {/* About Us — stays on home page */}
                       <li>
-                        <NavLink to="/team" onClick={closeMobileMenu}>About Us</NavLink>
+                        <a
+                          href="#"
+                          onClick={(e) => { e.preventDefault(); closeMobileMenu(); }}
+                          style={{ cursor: "pointer" }}
+                        >
+                          About Us
+                        </a>
                       </li>
 
                       <li>
