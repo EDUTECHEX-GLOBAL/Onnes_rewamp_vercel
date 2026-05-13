@@ -108,7 +108,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Next Generation Space Infrastructure</title>
+        <title> Onnes - Next Generation Space Infrastructure</title>
         <meta
           name="description"
           content="Onnes develops advanced cryogenic tanks for aerospace, shipping, and hydrogen storage. Explore our expertise in design, simulation, and manufacturing."
