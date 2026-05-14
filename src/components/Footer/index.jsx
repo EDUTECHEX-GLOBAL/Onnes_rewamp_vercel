@@ -32,9 +32,10 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
                   logoAlt="Logo"
                   text={
                     <>
-                      T-Hub, Hyderabad Knowledge City<br />
-                      Hyderabad,<br />
-                      Telangana 500081 INDIA
+                      T-Hub, Knowledge City,<br />
+                      Serilingampally,<br />
+                      Hyderabad, Telangana 500081 <br/>
+                      INDIA
                     </>
                   }
                   
