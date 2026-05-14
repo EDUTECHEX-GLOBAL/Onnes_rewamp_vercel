@@ -2,8 +2,9 @@ import React from 'react';
 import Div from '../Div';
 import './logolist.scss';
 
-// Top scrolling partner logos
+// Top scrolling partner logos — starts with Starburst
 const topPartners = [
+  { src: '/images/STARBURST.png', alt: 'Partner Starburst' }, // ← moved to first
   { src: '/images/Partner_1.1.png', alt: 'Partner 1' },
   { src: '/images/IAI.png', alt: 'Partner IAI' },
   { src: '/images/Partner_2.1.png', alt: 'Partner 2' },
@@ -13,10 +14,10 @@ const topPartners = [
   { src: '/images/PARAS.png', alt: 'Partner Paras' },
   { src: '/images/Partner_7.1.png', alt: 'Partner 7' },
   { src: '/images/Partner_nvidia.png', alt: 'Partner 7.1' },
-  { src: '/images/STARBURST.png', alt: 'Partner Starburst' },
-  { src: '/images/Client_3.png', alt: 'Partner 10' }, // moved from bottom
+  { src: '/images/Client_3.png', alt: 'Partner 10' },
   { src: '/images/IIMAVentures-04.png', alt: 'Partner12' },
-  { src: '/images/cropped_cse_logo.svg', alt: 'Extra Partner 3' }, // moved from extra-bottom
+  { src: '/images/PointOne.png', alt: 'Pointone' },
+  { src: '/images/cropped_cse_logo.svg', alt: 'Extra Partner 3' },
   { src: '/images/ASTRA.png', alt: 'Partner 6' },
 ];
 
