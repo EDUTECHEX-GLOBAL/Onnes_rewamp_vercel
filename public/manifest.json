@@ -1,6 +1,7 @@
 {
   "short_name": "Onnes",
-  "name": "Ultra Cool Engineering!",
+  "name": "Onnes - Building Space Infrastructure Beyond Earth",
+  "description": "Onnes Aerospace develops intelligent orbital infrastructure, lunar logistics, autonomous mission systems, and next-generation aerospace technologies.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +19,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#ffffff",
   "background_color": "#181818"

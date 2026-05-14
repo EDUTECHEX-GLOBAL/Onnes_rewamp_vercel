@@ -1,3 +1,5 @@
-export const pageTitle = () => {
-  document.title = "Onnes Cryogenics - Ultra Cool Engineering!";
+export const pageTitle = (title = "") => {
+  const baseTitle =
+    "Onnes - Building Space Infrastructure Enabling Humanity Beyond Earth";
+
 };
