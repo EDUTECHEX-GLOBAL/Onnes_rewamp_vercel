@@ -4,23 +4,21 @@ import './logolist.scss';
 
 // Top scrolling partner logos — starts with Starburst
 const topPartners = [
-  { src: '/images/STARBURST.png', alt: 'Partner Starburst' }, // ← moved to first
-  { src: '/images/Partner_1.1.png', alt: 'Partner 1' },
+  { src: '/images/STARBURST.png', alt: 'Partner Starburst' },
   { src: '/images/IAI.png', alt: 'Partner IAI' },
-  { src: '/images/Partner_2.1.png', alt: 'Partner 2' },
-  { src: '/images/Partner_3.1.jpg', alt: 'Partner 3' },
-  { src: '/images/Partner_4.4.png', alt: 'Partner 4' },
-  { src: '/images/Partner_4.3.png', alt: 'Partner 5' },
-  { src: '/images/PARAS.png', alt: 'Partner Paras' },
-  { src: '/images/Partner_7.1.png', alt: 'Partner 7' },
-  { src: '/images/Partner_nvidia.png', alt: 'Partner 7.1' },
-  { src: '/images/Client_3.png', alt: 'Partner 10' },
-  { src: '/images/IIMAVentures-04.png', alt: 'Partner12' },
+  { src: '/images/ASTRA.png', alt: 'Astra' },
+  { src: '/images/IIMAVentures-04.png', alt: 'IIMA' },
   { src: '/images/PointOne.png', alt: 'Pointone' },
-  { src: '/images/cropped_cse_logo.svg', alt: 'Extra Partner 3' },
-  { src: '/images/ASTRA.png', alt: 'Partner 6' },
+  { src: '/images/Partner_2.1.png', alt: 'startup seed' },
+  { src: '/images/cropped_cse_logo.svg', alt: 'CSE' },
+  { src: '/images/PARAS.png', alt: 'Partner Paras' },
+  { src: '/images/Client_3.png', alt: 'Orbit Aid' },
+  { src: '/images/Partner_7.1.png', alt: 'AWS' },
+  { src: '/images/Partner_nvidia.png', alt: 'Nvidia' },
+  { src: '/images/Partner_1.1.png', alt: 'Thub' },
+  { src: '/images/Partner_3.1.jpg', alt: 'venture catalyst space' },
+  { src: '/images/Partner_4.4.png', alt: 'Invest SA' },
 ];
-
 export default function LogoList() {
   const duplicatedPartners = [...topPartners, ...topPartners];
 
