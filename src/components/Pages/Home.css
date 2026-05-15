@@ -133,35 +133,43 @@
    ============================================ */
 @media (max-width: 767px) {
   .hero-banner {
-    height: 100vh;
-    min-height: 600px;
+    height: auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    background: #050a19;
   }
 
   /* KEY FIX: match desktop appearance on mobile */
   /* Scale image to show full width, anchor to center-right
      so the rocket (right side) stays visible just like desktop */
   .hero-image {
-    padding-top: 0;
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* shift focus toward the right-center where the rocket sits */
-    object-position: 70% center;
+    object-position: 58% center;
+    transform: scale(0.92);
+    transform-origin: 58% center;
   }
 
   /* Darken overlay slightly so text stays readable
      over the busier rocket area */
   .hero-overlay {
-    padding-left: 5%;
-    padding-right: 5%;
-    bottom: 220px;
-    top: 0;
-    align-items: center;
+    position: relative;
+    inset: auto;
+    flex: 1 0 auto;
+    min-height: calc(100svh - 220px);
+    padding: clamp(88px, 16svh, 136px) clamp(18px, 6vw, 34px) 28px;
+    align-items: flex-start;
+    justify-content: center;
     /* subtle extra darkening for text legibility */
     background: linear-gradient(
       to right,
-      rgba(5, 10, 25, 0.72) 0%,
-      rgba(5, 10, 25, 0.15) 100%
+      rgba(5, 10, 25, 0.82) 0%,
+      rgba(5, 10, 25, 0.48) 52%,
+      rgba(5, 10, 25, 0.2) 100%
     );
   }
 
@@ -171,11 +179,12 @@
   }
 
   .hero-heading {
-    font-size: 1.65rem;
+    font-size: clamp(1.45rem, 7vw, 2.25rem);
     line-height: 1.3;
     max-width: 100%;
     white-space: normal;
     margin-bottom: 12px;
+    letter-spacing: 0;
   }
 
   .hero-blue-line {
@@ -186,33 +195,41 @@
 
   .hero-subtext {
     display: block;
-    font-size: 0.82rem;
-    line-height: 1.65;
-    margin-bottom: 20px;
-    max-width: 100%;
+    font-size: clamp(0.78rem, 3.7vw, 0.95rem);
+    line-height: 1.6;
+    margin-bottom: clamp(16px, 5vw, 22px);
+    max-width: 34rem;
     color: #c9cdd6;
   }
 
   .hero-btn {
-    font-size: 0.65rem;
-    letter-spacing: 1.4px;
-    padding: 11px 20px;
+    max-width: 100%;
+    font-size: clamp(0.66rem, 3vw, 0.82rem);
+    letter-spacing: 0.9px;
+    line-height: 1.25;
+    padding: 11px clamp(14px, 5vw, 20px);
+    white-space: normal;
+    text-align: left;
   }
 
   /* ---- Capabilities Bar — 2×2 grid on mobile ---- */
   .hero-capabilities-bar {
-    height: 220px;
-    flex-wrap: wrap;
+    position: relative;
+    height: auto;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     overflow: visible;
     border-top: 1px solid rgba(43, 127, 255, 0.3);
   }
 
   .hero-capability-item {
-    flex: 0 0 50%;
-    width: 50%;
+    flex: none;
+    width: auto;
     min-width: unset;
-    height: 110px;
-    padding: 0 14px;
+    min-height: clamp(86px, 23vw, 110px);
+    height: auto;
+    padding: 14px clamp(10px, 3.8vw, 16px);
     gap: 10px;
     box-sizing: border-box;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -229,14 +246,104 @@
   }
 
   .hero-capability-icon img {
-    width: 36px;
-    height: 36px;
+    width: clamp(30px, 9vw, 38px);
+    height: clamp(30px, 9vw, 38px);
   }
 
   .hero-capability-label {
-    font-size: 0.72rem;
+    font-size: clamp(0.62rem, 3vw, 0.74rem);
     line-height: 1.4;
     font-weight: 600;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-overlay {
+    min-height: calc(100svh - 196px);
+    padding-top: clamp(78px, 13svh, 108px);
+  }
+
+  .hero-heading {
+    font-size: clamp(1.32rem, 6.6vw, 1.7rem);
+  }
+
+  .hero-capability-item {
+    min-height: 98px;
+    padding: 12px 9px;
+    gap: 8px;
+  }
+}
+
+@media (min-width: 381px) and (max-width: 767px) and (orientation: portrait) {
+  .hero-banner {
+    min-height: 667px;
+  }
+
+  .hero-image {
+    height: 667px;
+    object-position: 56% center;
+    transform: scale(0.9);
+    transform-origin: 56% center;
+  }
+
+  .hero-overlay {
+    min-height: 471px;
+    padding-top: 78px;
+    padding-bottom: 22px;
+  }
+
+  .hero-capability-item {
+    min-height: 98px;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .hero-overlay {
+    min-height: auto;
+    padding-top: 72px;
+    padding-bottom: 24px;
+  }
+
+  .hero-content {
+    max-width: 58%;
+  }
+
+  .hero-heading {
+    font-size: clamp(1.35rem, 4.2vw, 1.85rem);
+  }
+
+  .hero-subtext {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .hero-capabilities-bar {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .hero-capability-item {
+    min-height: 82px;
+    padding: 10px 8px;
+    gap: 8px;
+  }
+
+  .hero-capability-item:nth-child(2n) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-capability-item:last-child {
+    border-right: none;
+  }
+
+  .hero-capability-item:nth-child(3),
+  .hero-capability-item:nth-child(4) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .hero-capability-label {
+    font-size: 0.58rem;
+    line-height: 1.3;
   }
 }
 

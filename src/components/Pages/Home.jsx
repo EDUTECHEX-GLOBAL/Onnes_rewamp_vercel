@@ -143,11 +143,17 @@ export default function Home() {
         className="hero-banner"
         id="space-infrastructure"
       >
-        <img
-          src="/images/Home_banner.png"
-          alt="Onnes Aerospace Banner"
-          className="hero-image"
-        />
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcSet="/images/Home_banner_mobile.png"
+          />
+          <img
+            src="/images/Home_banner.png"
+            alt="Onnes Aerospace Banner"
+            className="hero-image"
+          />
+        </picture>
 
         <div className="hero-overlay">
           <div
@@ -237,4 +243,4 @@ export default function Home() {
     </>
   );
 }
-//channges
+
