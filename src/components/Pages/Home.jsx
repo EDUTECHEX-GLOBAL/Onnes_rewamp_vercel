@@ -9,45 +9,6 @@ import Popup from "../Popup/Popup";
 
 import "./Home.css";
 
-const portfolioData = [
-  {
-    title: "Intelligent Orbital Infrastructure",
-    subtitle: "See Details",
-    href: "/#orbital-infrastructure",
-    src: "/images/deepspace.png",
-  },
-  {
-    title: "Autonomous Mission Systems",
-    subtitle: "See Details",
-    href: "/#mission-systems",
-    src: "/images/Home_8.webp",
-  },
-  {
-    title: "Lunar Operations",
-    subtitle: "See Details",
-    href: "/#lunar-logistics",
-    src: "/images/hydrogenpoweredaviation.jpg",
-  },
-  {
-    title: "Deep Space Logistics",
-    subtitle: "See Details",
-    href: "/#lunar-logistics",
-    src: "/images/greenshippingoceans.png",
-  },
-  {
-    title: "Hypersonic Systems",
-    subtitle: "See Details",
-    href: "/#hypersonic-isr",
-    src: "/images/hydrogenstorage.png",
-  },
-  {
-    title: "ISR Aerospace Networks",
-    subtitle: "See Details",
-    href: "/#hypersonic-isr",
-    src: "/images/greenstorage.png",
-  },
-];
-
 const capabilityIcons = [
   {
     icon: (

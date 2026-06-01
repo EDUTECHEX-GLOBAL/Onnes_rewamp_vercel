@@ -10,7 +10,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Contact Page -->
+  <!-- Contact -->
   <url>
     <loc>https://onnes.in/contact</loc>
     <lastmod>2026-05-14</lastmod>
@@ -20,7 +20,7 @@
 
   <!-- Space Infrastructure -->
   <url>
-    <loc>https://onnes.in/#space-infrastructure</loc>
+    <loc>https://onnes.in/space-infrastructure</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -28,7 +28,7 @@
 
   <!-- Engineering Tomorrow -->
   <url>
-    <loc>https://onnes.in/#engineering-tomorrow</loc>
+    <loc>https://onnes.in/engineering-tomorrow</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -36,7 +36,7 @@
 
   <!-- Orbital Infrastructure -->
   <url>
-    <loc>https://onnes.in/#orbital-infrastructure</loc>
+    <loc>https://onnes.in/orbital-infrastructure</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -44,7 +44,7 @@
 
   <!-- Mission Systems -->
   <url>
-    <loc>https://onnes.in/#mission-systems</loc>
+    <loc>https://onnes.in/mission-systems</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -52,15 +52,15 @@
 
   <!-- Lunar Logistics -->
   <url>
-    <loc>https://onnes.in/#lunar-logistics</loc>
+    <loc>https://onnes.in/lunar-logistics</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Hypersonic ISR -->
+  <!-- Hypersonic & ISR -->
   <url>
-    <loc>https://onnes.in/#hypersonic-isr</loc>
+    <loc>https://onnes.in/hypersonic-isr</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

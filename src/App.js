@@ -1,5 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import ContactPage from './components/Pages/ContactPage';
+import SpaceInfrastructure from './components/Pages/SpaceInfrastructure';
+import EngineeringTomorrow from './components/Pages/EngineeringTomorrow';
+import OrbitalInfrastructure from './components/Pages/OrbitalInfrastructure';
+import MissionSystems from './components/Pages/MissionSystems';
+import LunarLogistics from './components/Pages/LunarLogistics';
+import HypersonicISR from './components/Pages/HypersonicISR';
 import ErrorPage from './components/Pages/ErrorPage';
 import Home from './components/Pages/Home';
 import Layout from './components/Layout';
@@ -20,7 +26,13 @@ function App() {
         {/* Main Layout with Default Header */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="contact" element={<ContactPage />} />        
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="/space-infrastructure" element={<SpaceInfrastructure />} />
+          <Route path="/engineering-tomorrow" element={<EngineeringTomorrow />} />
+          <Route path="/orbital-infrastructure" element={<OrbitalInfrastructure />} />
+          <Route path="/mission-systems" element={<MissionSystems />} />
+          <Route path="/lunar-logistics" element={<LunarLogistics />} />
+          <Route path="/hypersonic-isr" element={<HypersonicISR />} />
         </Route>
 
         {/* Admin Routes */}
