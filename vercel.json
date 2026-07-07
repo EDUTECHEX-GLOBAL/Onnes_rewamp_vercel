@@ -1,0 +1,40 @@
+{
+  "redirects": [
+    {
+      "source": "/space-infrastructure",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/engineering-tomorrow",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/orbital-infrastructure",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/mission-systems",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lunar-logistics",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hypersonic-isr",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
