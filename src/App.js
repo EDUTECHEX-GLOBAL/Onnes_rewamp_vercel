@@ -13,6 +13,29 @@ import ContactList from "./AdminDashboard/components/ContactList";
 import SubscriptionList from "./AdminDashboard/components/SubscriptionList";
 import VisitorsList from "./AdminDashboard/components/VisitorsList";
 
+const LEGACY_REDIRECT_PATHS = [
+  "space-infrastructure",
+  "engineering-tomorrow",
+  "orbital-infrastructure",
+  "mission-systems",
+  "lunar-logistics",
+  "hypersonic-isr",
+  "about",
+  "blog",
+  "team",
+  "technology",
+  "spaceportfolio",
+  "ai-simulation",
+  "aerospace",
+  "capabilities",
+  "technologies",
+  "services",
+  "projects",
+  "careers",
+  "news",
+  "gallery",
+];
+
 function App() {
   return (
     <>
@@ -26,35 +49,13 @@ function App() {
           <Route path="contact" element={<ContactPage />} />
 
           {/* Legacy URLs -> Redirect to Home */}
-          <Route
-            path="space-infrastructure"
-            element={<Navigate to="/" replace />}
-          />
-
-          <Route
-            path="engineering-tomorrow"
-            element={<Navigate to="/" replace />}
-          />
-
-          <Route
-            path="orbital-infrastructure"
-            element={<Navigate to="/" replace />}
-          />
-
-          <Route
-            path="mission-systems"
-            element={<Navigate to="/" replace />}
-          />
-
-          <Route
-            path="lunar-logistics"
-            element={<Navigate to="/" replace />}
-          />
-
-          <Route
-            path="hypersonic-isr"
-            element={<Navigate to="/" replace />}
-          />
+          {LEGACY_REDIRECT_PATHS.map((path) => (
+            <Route
+              key={path}
+              path={path}
+              element={<Navigate to="/" replace />}
+            />
+          ))}
         </Route>
 
         {/* Admin */}
